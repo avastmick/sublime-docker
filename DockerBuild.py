@@ -53,9 +53,14 @@ class DockerBuildCommand(sublime_plugin.WindowCommand):
 
     def generateBuildCmd(self):
         cpp_check_list = ["gcc", "g++", "cpp", "c++"]
+        rust_check_list = ["rs"]
         exec_cmd = ""
+
         if any(map(lambda x: x in self.docker_image or x in self.docker_image_exe, cpp_check_list)):
             exec_cmd = "./a.out;"
+        elif self.file_name.split('.')[1] == 'rs':
+            exec_cmd = "./" + self.file_name.split('.')[0];
+
         build_cmd =  " " + self.docker_image_exe + " \"/src/" + self.file_name + "\"; "
         build_cmd = " bash -c 'cd /src; " + build_cmd + exec_cmd + "'"
         return build_cmd

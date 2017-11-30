@@ -1,0 +1,14 @@
+{
+    "target": "docker_build",
+    "type": "RUN",
+    "selector": "source.rs",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]+)",
+    "docker_image": "rust",
+    "docker_image_tag": "latest",
+    "docker_image_exe": "rustc",
+
+    "variants": [
+
+    ]
+}
+

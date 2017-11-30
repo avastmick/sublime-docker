@@ -50,7 +50,7 @@ def isDockerRunningOnLinux():
           We assume that the path to the daemon which appears in full ps output
           is of the form */bin/docker
     """
-    if len(os.popen("ps -aef | grep '/bin/docker ' | grep -v grep").read().strip()) > 0:
+    if len(os.popen("ps -aef | grep '/bin/dockerd ' | grep -v grep").read().strip()) > 0:
         return True
     if len(os.popen("ps -aef | grep '/bin/docker.io ' | grep -v grep").read().strip()) > 0:
         return True
