@@ -53,7 +53,6 @@ class DockerBuildCommand(sublime_plugin.WindowCommand):
 
     def generateBuildCmd(self):
         cpp_check_list = ["gcc", "g++", "cpp", "c++"]
-        rust_check_list = ["rs"]
         exec_cmd = ""
 
         if any(map(lambda x: x in self.docker_image or x in self.docker_image_exe, cpp_check_list)):
