@@ -59,6 +59,8 @@ class DockerBuildCommand(sublime_plugin.WindowCommand):
             exec_cmd = "./a.out;"
         elif self.file_name.split('.')[1] == 'rs':
             exec_cmd = "./" + self.file_name.split('.')[0];
+        elif self.file_name.split('.')[1] == 'fs':
+            exec_cmd = "mono ./" + self.file_name.split('.')[0] + ".exe";
 
         build_cmd =  " " + self.docker_image_exe + " \"/src/" + self.file_name + "\"; "
         build_cmd = " bash -c 'cd /src; " + build_cmd + exec_cmd + "'"

@@ -1,0 +1,14 @@
+{
+    "target": "docker_build",
+    "type": "RUN",
+    "selector": "source.fs",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]+)",
+    "docker_image": "fsharp",
+    "docker_image_tag": "latest",
+    "docker_image_exe": "fsharpc",
+
+    "variants": [
+
+    ]
+}
+
